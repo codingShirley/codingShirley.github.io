@@ -22,8 +22,8 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "xcodeyang"
-  - git config user.email "xcodeyang@gmail.com"
+  - git config user.name "codingShirley"
+  - git config user.email "slmagic1991@gmail.com"
   - git add .
   - git commit -m "Update blogs"
   - git push --force --quiet "https://${gh_token}@${gh_repo}" master:master
@@ -31,4 +31,4 @@ after_script:
 
 env:
  global:
-  - gh_repo: github.com/ZhipingYang/zhipingyang.github.io.git
+  - gh_repo: github.com/codingShirley/codingShirley.github.io.git
