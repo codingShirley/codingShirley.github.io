@@ -1,0 +1,34 @@
+
+language: node_js
+node_js: stable
+
+
+branches:
+  only:
+    - resource
+
+# S: Build Lifecycle
+install:
+  - npm install i -g npm-check-updates
+
+
+# before_script:
+#  - npm install hexo-cli -g
+
+script:
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "xcodeyang"
+  - git config user.email "xcodeyang@gmail.com"
+  - git add .
+  - git commit -m "Update blogs"
+  - git push --force --quiet "https://${gh_token}@${gh_repo}" master:master
+# E: Build LifeCycle
+
+env:
+ global:
+  - gh_repo: github.com/ZhipingYang/zhipingyang.github.io.git
