@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: XcodeYang
-subtitle: 我喜欢swift😍，有个Taylor前缀更好
-description: 苦逼的码农
-author: XcodeYang
+title: Shirley Young
+subtitle: 前端博客
+description: 前端新手，请多指教
+author: ShirleyYoung
 language: cn
 timezone: GMT
 
@@ -69,5 +69,5 @@ theme: hexo-theme-yilia-master
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/ZhipingYang/zhipingyang.github.io.git
+  repo: https://github.com/codingShirley/codingshirley.github.io.git
   branch: master
