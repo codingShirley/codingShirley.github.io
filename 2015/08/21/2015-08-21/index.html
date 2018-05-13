@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>那些年我们用过的第三方库 | Shirley Young</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SnapKit（Masonry） 的使用 - 杨志平
+这两个库的用法都是差不多的，只是由两个不同的人来主导开源  SnapKit是Swift版 Masonry是OC版    
+自动布局及交互式编程是iOS开发的趋势，同时Swift也会在不久将来替换OC语言。所以现在的iOS开发者可以开始学习Swift2.0 以及应用 Autolayout 来编程
+
+代码对比（概况了解）开始前OC原生布局代码123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些年我们用过的第三方库">
+<meta property="og:url" content="http://yoursite.com/2015/08/21/2015-08-21/index.html">
+<meta property="og:site_name" content="Shirley Young">
+<meta property="og:description" content="SnapKit（Masonry） 的使用 - 杨志平
+这两个库的用法都是差不多的，只是由两个不同的人来主导开源  SnapKit是Swift版 Masonry是OC版    
+自动布局及交互式编程是iOS开发的趋势，同时Swift也会在不久将来替换OC语言。所以现在的iOS开发者可以开始学习Swift2.0 以及应用 Autolayout 来编程
+
+代码对比（概况了解）开始前OC原生布局代码123">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9360037/9401926/1e572316-4809-11e5-9a96-430e688cda85.png">
+<meta property="og:updated_time" content="2018-05-13T10:55:56.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="那些年我们用过的第三方库">
+<meta name="twitter:description" content="SnapKit（Masonry） 的使用 - 杨志平
+这两个库的用法都是差不多的，只是由两个不同的人来主导开源  SnapKit是Swift版 Masonry是OC版    
+自动布局及交互式编程是iOS开发的趋势，同时Swift也会在不久将来替换OC语言。所以现在的iOS开发者可以开始学习Swift2.0 以及应用 Autolayout 来编程
+
+代码对比（概况了解）开始前OC原生布局代码123">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/9360037/9401926/1e572316-4809-11e5-9a96-430e688cda85.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Shirley Young" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">ShirleyYoung</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端博客</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Accelerate/" style="font-size: 10px;">Accelerate</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/TouchID/" style="font-size: 10px;">TouchID</a> <a href="/tags/Universal-Links/" style="font-size: 10px;">Universal Links</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/defer/" style="font-size: 10px;">defer</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/guard/" style="font-size: 10px;">guard</a> <a href="/tags/hitTest/" style="font-size: 10px;">hitTest</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/lazy/" style="font-size: 10px;">lazy</a> <a href="/tags/nextResponder/" style="font-size: 10px;">nextResponder</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/responder-chain/" style="font-size: 10px;">responder chain</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/通用链接/" style="font-size: 10px;">通用链接</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://zhipingyang.github.io/">xcodeyang&#39;s blog&#39;</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">If you want to go fast, go alone. If you want to go far, go with others.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">ShirleyYoung</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">ShirleyYoung</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端博客</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-08-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/21/2015-08-21/" class="article-date">
+  	<time datetime="2015-08-21T12:00:00.000Z" itemprop="datePublished">2015-08-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      那些年我们用过的第三方库
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SnapKit（Masonry）-的使用-杨志平"><a href="#SnapKit（Masonry）-的使用-杨志平" class="headerlink" title="SnapKit（Masonry） 的使用 - 杨志平"></a>SnapKit（Masonry） 的使用 - 杨志平</h2><blockquote>
+<p>这两个库的用法都是差不多的，只是由两个不同的人来主导开源  <br><br><strong><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a></strong>是Swift版 <br><br><strong><a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a></strong>是OC版    </p>
+<p>自动布局及交互式编程是iOS开发的趋势，同时Swift也会在不久将来替换OC语言。所以现在的iOS开发者可以开始学习Swift2.0 以及应用 Autolayout 来编程</p>
+</blockquote>
+<h3 id="代码对比（概况了解）"><a href="#代码对比（概况了解）" class="headerlink" title="代码对比（概况了解）"></a>代码对比（概况了解）</h3><h5 id="开始前OC原生布局代码"><a href="#开始前OC原生布局代码" class="headerlink" title="开始前OC原生布局代码"></a>开始前OC原生布局代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">UIView *superview = self;</div><div class="line"></div><div class="line">UIView *view1 = [[UIView alloc] init];</div><div class="line">view1.translatesAutoresizingMaskIntoConstraints = NO;</div><div class="line">view1.backgroundColor = [UIColor greenColor];</div><div class="line">[superview addSubview:view1];</div><div class="line"></div><div class="line">UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);</div><div class="line"></div><div class="line">[superview addConstraints:@[</div><div class="line"></div><div class="line">   //view1 constraints</div><div class="line">   [NSLayoutConstraint constraintWithItem:view1</div><div class="line">                                attribute:NSLayoutAttributeTop</div><div class="line">                                relatedBy:NSLayoutRelationEqual</div><div class="line">                                   toItem:superview</div><div class="line">                                attribute:NSLayoutAttributeTop</div><div class="line">                               multiplier:1.0</div><div class="line">                                 constant:padding.top],</div><div class="line"></div><div class="line">   [NSLayoutConstraint constraintWithItem:view1</div><div class="line">                                attribute:NSLayoutAttributeLeft</div><div class="line">                                relatedBy:NSLayoutRelationEqual</div><div class="line">                                   toItem:superview</div><div class="line">                                attribute:NSLayoutAttributeLeft</div><div class="line">                               multiplier:1.0</div><div class="line">                                 constant:padding.left],</div><div class="line"></div><div class="line">   [NSLayoutConstraint constraintWithItem:view1</div><div class="line">                                attribute:NSLayoutAttributeBottom</div><div class="line">                                relatedBy:NSLayoutRelationEqual</div><div class="line">                                   toItem:superview</div><div class="line">                                attribute:NSLayoutAttributeBottom</div><div class="line">                               multiplier:1.0</div><div class="line">                                 constant:-padding.bottom],</div><div class="line"></div><div class="line">   [NSLayoutConstraint constraintWithItem:view1</div><div class="line">                                attribute:NSLayoutAttributeRight</div><div class="line">                                relatedBy:NSLayoutRelationEqual</div><div class="line">                                   toItem:superview</div><div class="line">                                attribute:NSLayoutAttributeRight</div><div class="line">                               multiplier:1</div><div class="line">                                 constant:-padding.right],</div><div class="line">	]];</div></pre></td></tr></table></figure>
+<h5 id="使用Masonry"><a href="#使用Masonry" class="headerlink" title="使用Masonry"></a>使用Masonry</h5><p>精简</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);</div><div class="line"></div><div class="line">[view1 mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">   make.top.equalTo(superview.mas_top).with.offset(padding.top); //with 	is an optional semantic filler</div><div class="line">	make.left.equalTo(superview.mas_left).with.offset(padding.left);</div><div class="line">	make.bottom.equalTo(superview.mas_bottom).with.offset(-	padding.bottom);</div><div class="line">	make.right.equalTo(superview.mas_right).with.offset(-padding.right);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>更加精简</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[view1 mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line"> 	 	 make.edges.equalTo(superview).with.insets(padding);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="同理使用SnapKit"><a href="#同理使用SnapKit" class="headerlink" title="同理使用SnapKit"></a>同理使用SnapKit</h5><p>精简</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">let box = UIView()</div><div class="line">superview.addSubview(box)</div><div class="line"></div><div class="line">box.snp_makeConstraints &#123; (make) -&gt; Void in</div><div class="line">	make.top.equalTo(superview).offset(20)</div><div class="line">	make.left.equalTo(superview).offset(20)</div><div class="line">	make.bottom.equalTo(superview).offset(-20)</div><div class="line">   	make.right.equalTo(superview).offset(-20)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>更加精简</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">box.snp_makeConstraints &#123; (make) -&gt; Void in</div><div class="line">   	make.edges.equalTo(superview).inset(UIEdgeInsetsMake(20, 20, 20, 20))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="如何使用-amp-amp-原理"><a href="#如何使用-amp-amp-原理" class="headerlink" title="如何使用 &amp;&amp; 原理"></a>如何使用 &amp;&amp; 原理</h3><h4 id="常见的约束类型对比"><a href="#常见的约束类型对比" class="headerlink" title="常见的约束类型对比"></a>常见的约束类型对比</h4><table>
+<thead>
+<tr>
+<th>ViewAttribute</th>
+<th>NSLayoutAttribute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>view.snp_left</td>
+<td>NSLayoutAttribute.Left</td>
+</tr>
+<tr>
+<td>view.snp_right</td>
+<td>NSLayoutAttribute.Right</td>
+</tr>
+<tr>
+<td>view.snp_top</td>
+<td>NSLayoutAttribute.Top</td>
+</tr>
+<tr>
+<td>view.snp_bottom</td>
+<td>NSLayoutAttribute.Bottom</td>
+</tr>
+<tr>
+<td>view.snp_leading</td>
+<td>NSLayoutAttribute.Leading</td>
+</tr>
+<tr>
+<td>view.snp_trailing</td>
+<td>NSLayoutAttribute.Trailing</td>
+</tr>
+<tr>
+<td>view.snp_width</td>
+<td>NSLayoutAttribute.Width</td>
+</tr>
+<tr>
+<td>view.snp_height</td>
+<td>NSLayoutAttribute.Height</td>
+</tr>
+<tr>
+<td>view.snp_centerX</td>
+<td>NSLayoutAttribute.CenterX</td>
+</tr>
+<tr>
+<td>view.snp_centerY</td>
+<td>NSLayoutAttribute.CenterY</td>
+</tr>
+<tr>
+<td>view.snp_baseline</td>
+<td>NSLayoutAttribute.Baseline</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常见的用法"><a href="#常见的用法" class="headerlink" title="常见的用法"></a>常见的用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">make.top.equalTo(42)</div><div class="line">make.lessThanOrEqualTo.equalTo(SuperView)</div><div class="line">make.top.equalTo(SuperView)</div><div class="line">make.size.equalTo(CGSizeMake(50, 100))</div><div class="line">make.edges.equalTo(UIEdgeInsetsMake(10, 0, 10, 0))</div><div class="line">make.left.equalTo(view).offset(UIEdgeInsetsMake(10, 0, 10, 0))</div><div class="line"></div><div class="line">make.height.equalTo(OtherView).offset(10)</div><div class="line">make.trailing.equalTo(OtherView.snp_trailing).offset(10)</div><div class="line">make.bottom.equalTo(-20).priority(250)</div></pre></td></tr></table></figure>
+<h4 id="对比交互式编程的约束布局"><a href="#对比交互式编程的约束布局" class="headerlink" title="对比交互式编程的约束布局"></a>对比交互式编程的约束布局</h4><p><img src="https://cloud.githubusercontent.com/assets/9360037/9401926/1e572316-4809-11e5-9a96-430e688cda85.png" alt="image"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/14/2015-09-11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          浅拷贝与深拷贝
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/26/2015-07-26/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[上海] Android 小伙伴一起来 51offer 玩吧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015-08-21" data-title="那些年我们用过的第三方库" data-url="http://yoursite.com/2015/08/21/2015-08-21/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 ShirleyYoung
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Xcode MarkDown的代码文档 ( for swift ) | Shirley Young</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="markdown在swift中的应用goals
+描述各个属性、函数和类的真正用途
+高亮函数的输入和输出（参数和返回值）
+几个月后还能清晰地记得每个函数属性是为了什么
+使用工具制作具有专业外观的使用手册（比如：使用 Jazzy）
+Xcode 里写的代码文档能被预览
+
+markdown grammar1234567891011121314151617181920212223#text#：文本标题**t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode MarkDown的代码文档 ( for swift )">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/2016-06-17/index.html">
+<meta property="og:site_name" content="Shirley Young">
+<meta property="og:description" content="markdown在swift中的应用goals
+描述各个属性、函数和类的真正用途
+高亮函数的输入和输出（参数和返回值）
+几个月后还能清晰地记得每个函数属性是为了什么
+使用工具制作具有专业外观的使用手册（比如：使用 Jazzy）
+Xcode 里写的代码文档能被预览
+
+markdown grammar1234567891011121314151617181920212223#text#：文本标题**t">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_2_quickhelp2.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_10_keywords5.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_15_jazzy_results.png">
+<meta property="og:updated_time" content="2018-05-13T10:55:56.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xcode MarkDown的代码文档 ( for swift )">
+<meta name="twitter:description" content="markdown在swift中的应用goals
+描述各个属性、函数和类的真正用途
+高亮函数的输入和输出（参数和返回值）
+几个月后还能清晰地记得每个函数属性是为了什么
+使用工具制作具有专业外观的使用手册（比如：使用 Jazzy）
+Xcode 里写的代码文档能被预览
+
+markdown grammar1234567891011121314151617181920212223#text#：文本标题**t">
+<meta name="twitter:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_2_quickhelp2.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Shirley Young" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">ShirleyYoung</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端博客</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Accelerate/" style="font-size: 10px;">Accelerate</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/TouchID/" style="font-size: 10px;">TouchID</a> <a href="/tags/Universal-Links/" style="font-size: 10px;">Universal Links</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/defer/" style="font-size: 10px;">defer</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/guard/" style="font-size: 10px;">guard</a> <a href="/tags/hitTest/" style="font-size: 10px;">hitTest</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/lazy/" style="font-size: 10px;">lazy</a> <a href="/tags/nextResponder/" style="font-size: 10px;">nextResponder</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/responder-chain/" style="font-size: 10px;">responder chain</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/通用链接/" style="font-size: 10px;">通用链接</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://zhipingyang.github.io/">xcodeyang&#39;s blog&#39;</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">If you want to go fast, go alone. If you want to go far, go with others.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">ShirleyYoung</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">ShirleyYoung</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端博客</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-06-17" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/17/2016-06-17/" class="article-date">
+  	<time datetime="2016-06-17T10:30:00.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Xcode MarkDown的代码文档 ( for swift )
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/document/">document</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="markdown在swift中的应用"><a href="#markdown在swift中的应用" class="headerlink" title="markdown在swift中的应用"></a>markdown在swift中的应用</h3><h4 id="goals"><a href="#goals" class="headerlink" title="goals"></a>goals</h4><ul>
+<li>描述各个属性、函数和类的真正用途</li>
+<li>高亮函数的输入和输出（参数和返回值）</li>
+<li>几个月后还能清晰地记得每个函数属性是为了什么</li>
+<li>使用工具制作具有专业外观的使用手册（比如：使用 <a href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy</a>）</li>
+<li>Xcode 里写的代码文档能被预览</li>
+</ul>
+<h4 id="markdown-grammar"><a href="#markdown-grammar" class="headerlink" title="markdown grammar"></a>markdown grammar</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#text#：文本标题</div><div class="line"></div><div class="line">**text**：使文本具有加粗的效果</div><div class="line"></div><div class="line">*text*：使文本具有斜体的效果</div><div class="line"></div><div class="line">* text：使文本成为一个无序列表的元素，值得注意的是，有个 * 后面需要有一个空格。同样，可以使用 + 或 - 实现这个的功能</div><div class="line"></div><div class="line">1.text：使文本成为一个有序列表的元素</div><div class="line"></div><div class="line">[linked text](http://some-url.com)：使文本成为可以点击的超链接</div><div class="line"></div><div class="line">![image show](http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png)：可以显示图片</div><div class="line"></div><div class="line">&gt; text：创建一个块引用。</div><div class="line"></div><div class="line">使用 4 个空格或 1 个 tab 来缩进所写的代码块，等价于 HTML 中的 \\ 标签。可以继续使用 4 个空格或 1 个 tab 来添加另一个缩进</div><div class="line"></div><div class="line">如果不想使用空格或 tab 的话，可以使用 ` 。比如， `var myProperty` 会显示成 var myProperty</div><div class="line"></div><div class="line">另一种创建代码块的方法是添加 4 个 `，并从下一行开始写具体的代码，最后添加 4 个 ` 表示结束</div><div class="line"></div><div class="line">反斜杠修饰 Markdown 的特殊字符就可以避免 Markdown 语法的解析了。比如， \**this\** 就不会产生加粗的效果</div></pre></td></tr></table></figure>
+<p>注释区域： 3 个斜线（///）或以下面的形式开头：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"></div><div class="line">*/</div></pre></td></tr></table></figure>
+<h5 id="Case"><a href="#Case" class="headerlink" title="Case"></a>Case</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">    It calculates and returns the outcome of the division of the two parameters.</div><div class="line"></div><div class="line">    ## Important Notes ##</div><div class="line">    1. Both parameters are **double** numbers.</div><div class="line">    2. For a proper result the second parameter *must be other than 0*.</div><div class="line">    3. If the second parameter is 0 then the function will return nil.</div><div class="line"></div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">performDivision</span>（<span class="title">number1</span>: <span class="title">Double</span>, <span class="title">number2</span>: <span class="title">Double</span>） -&gt; <span class="title">Double</span>! </span>&#123;</div><div class="line">    <span class="keyword">if</span> number2 != <span class="number">0</span> &#123;</div><div class="line">        <span class="keyword">return</span> number1 / number2</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_2_quickhelp2.png" alt="case image"></p>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png" alt="quick look"></p>
+<h4 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h4><ul>
+<li>Parameter</li>
+<li>Returns</li>
+<li>Remark</li>
+<li>SeeAlso</li>
+<li>Precondiction</li>
+<li>Requires</li>
+<li>Todo</li>
+<li>Version</li>
+<li>Author</li>
+<li>Note</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">    Another complicated function.</div><div class="line"></div><div class="line">    - Parameter fullname: The fullname that will be broken into its parts.</div><div class="line">    - Returns: A *tuple* with the first and last name.</div><div class="line"></div><div class="line">    - Remark:</div><div class="line">        There's a counterpart function that concatenates the first and last name into a full name.</div><div class="line"></div><div class="line">    - SeeAlso:  `createFullName（_:lastname:）`</div><div class="line"></div><div class="line">    - Precondition: `fullname` should not be nil.</div><div class="line">    - Requires: Both first and last name should be parts of the full name, separated with a *space character*.</div><div class="line"></div><div class="line">    - Todo: Support middle name in the next version.</div><div class="line"></div><div class="line">    - Warning: A wonderful **crash** will be the result of a `nil` argument.</div><div class="line"></div><div class="line">    - Version: 1.1</div><div class="line"></div><div class="line">    - Author: Myself Only</div><div class="line"></div><div class="line">    - Note: Too much documentation for such a small function.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">breakFullName</span>（<span class="title">fullname</span>: <span class="title">String</span>) -&gt; （<span class="title">firstname</span>: <span class="title">String</span>, <span class="title">lastname</span>: <span class="title">String</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> fullnameInPieces = fullname.componentsSeparatedByString（<span class="string">" "</span>）</div><div class="line">    <span class="keyword">return</span> （fullnameInPieces[<span class="number">0</span>], fullnameInPieces[<span class="number">1</span>]）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_10_keywords5.png" alt="全关键字"></p>
+<h3 id="Jazzy-自动产生代码文档"><a href="#Jazzy-自动产生代码文档" class="headerlink" title="Jazzy 自动产生代码文档"></a>Jazzy 自动产生代码文档</h3><blockquote>
+<p><a href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy</a> 是一款可以为 Swift 和 Objective-C 代码产生具有 Apple 风格的代码文档工具。</p>
+<h4 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h4><p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_15_jazzy_results.png" alt="jazzy 效果"></p>
+</blockquote>
+<h5 id="下面以Alamofire为例子："><a href="#下面以Alamofire为例子：" class="headerlink" title="下面以Alamofire为例子："></a>下面以<code>Alamofire</code>为例子：</h5><blockquote>
+<p>jazzy –help 查看帮助</p>
+<ul>
+<li>cd Alamofire 的项目path</li>
+<li>jazzy –output /Users/xcodeyang/Desktop/jazzy_document </li>
+</ul>
+</blockquote>
+<p><strong><a href="http://swift.gg/2016/06/15/swift-markdown/" target="_blank" rel="external">参考博客地址</a></strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/22/2016-07-22/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第60期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/06/2016-05-06/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">枚举的特殊用法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-06-17" data-title="Xcode MarkDown的代码文档 ( for swift )" data-url="http://yoursite.com/2016/06/17/2016-06-17/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 ShirleyYoung
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

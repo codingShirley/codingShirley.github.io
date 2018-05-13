@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>IM中输入框的优化方案实现 | Shirley Young</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IM中输入框的优化方案实现以下图的输入框为例
+
+输入框的呈现方式选择以下两个方法对比
+
+Keyboard的inputAccessoryView
+
+
+相对推荐的方法，有更好的丰富的交互效果
+可以与scrollView的一些属性直接绑定
+
+
+InputView的frame适应
+
+
+传统的方法
+优点：灵活控制显示位置
+缺点：过多的计算frame
+
+###InputAccessoryView方式
+案例见G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IM中输入框的优化方案实现">
+<meta property="og:url" content="http://yoursite.com/2015/11/25/2015-11-25/index.html">
+<meta property="og:site_name" content="Shirley Young">
+<meta property="og:description" content="IM中输入框的优化方案实现以下图的输入框为例
+
+输入框的呈现方式选择以下两个方法对比
+
+Keyboard的inputAccessoryView
+
+
+相对推荐的方法，有更好的丰富的交互效果
+可以与scrollView的一些属性直接绑定
+
+
+InputView的frame适应
+
+
+传统的方法
+优点：灵活控制显示位置
+缺点：过多的计算frame
+
+###InputAccessoryView方式
+案例见G">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9360037/11319390/0ad964a8-90b0-11e5-90aa-9d2ca1fa548e.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9360037/11436829/4b2d95f2-9523-11e5-8d66-8745354c0e99.png">
+<meta property="og:updated_time" content="2018-05-13T10:55:56.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IM中输入框的优化方案实现">
+<meta name="twitter:description" content="IM中输入框的优化方案实现以下图的输入框为例
+
+输入框的呈现方式选择以下两个方法对比
+
+Keyboard的inputAccessoryView
+
+
+相对推荐的方法，有更好的丰富的交互效果
+可以与scrollView的一些属性直接绑定
+
+
+InputView的frame适应
+
+
+传统的方法
+优点：灵活控制显示位置
+缺点：过多的计算frame
+
+###InputAccessoryView方式
+案例见G">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/9360037/11319390/0ad964a8-90b0-11e5-90aa-9d2ca1fa548e.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Shirley Young" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">ShirleyYoung</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端博客</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Accelerate/" style="font-size: 10px;">Accelerate</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/TouchID/" style="font-size: 10px;">TouchID</a> <a href="/tags/Universal-Links/" style="font-size: 10px;">Universal Links</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/defer/" style="font-size: 10px;">defer</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/guard/" style="font-size: 10px;">guard</a> <a href="/tags/hitTest/" style="font-size: 10px;">hitTest</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/lazy/" style="font-size: 10px;">lazy</a> <a href="/tags/nextResponder/" style="font-size: 10px;">nextResponder</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/responder-chain/" style="font-size: 10px;">responder chain</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/通用链接/" style="font-size: 10px;">通用链接</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://zhipingyang.github.io/">xcodeyang&#39;s blog&#39;</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">If you want to go fast, go alone. If you want to go far, go with others.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">ShirleyYoung</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars1.githubusercontent.com/u/29747867" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">ShirleyYoung</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端博客</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/codingShirley" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/codingshirley@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-11-25" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/2015-11-25/" class="article-date">
+  	<time datetime="2015-11-25T10:30:00.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IM中输入框的优化方案实现
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IM中输入框的优化方案实现"><a href="#IM中输入框的优化方案实现" class="headerlink" title="IM中输入框的优化方案实现"></a>IM中输入框的优化方案实现</h2><p><code>以下图的输入框为例</code></p>
+<p><img src="https://cloud.githubusercontent.com/assets/9360037/11319390/0ad964a8-90b0-11e5-90aa-9d2ca1fa548e.png" alt="stand"></p>
+<h4 id="输入框的呈现方式选择"><a href="#输入框的呈现方式选择" class="headerlink" title="输入框的呈现方式选择"></a>输入框的呈现方式选择</h4><p><code>以下两个方法对比</code></p>
+<ul>
+<li>Keyboard的inputAccessoryView</li>
+</ul>
+<blockquote>
+<p>相对推荐的方法，有更好的丰富的交互效果</p>
+<p>可以与scrollView的一些属性直接绑定</p>
+</blockquote>
+<ul>
+<li>InputView的frame适应</li>
+</ul>
+<blockquote>
+<p>传统的方法</p>
+<p>优点：灵活控制显示位置</p>
+<p>缺点：过多的计算frame</p>
+</blockquote>
+<p>###InputAccessoryView方式</p>
+<p><a href="https://github.com/ZhipingYang/UUKeyboardInputView" target="_blank" rel="external">案例见GitHub的Demo</a></p>
+<blockquote>
+<p>iOS的输入源都有输入源（keyboard及keyboard的配件InputAccessoryView），那通常的方法是输入源控件（Textfield、TextView等）使用一般的<code>InputView的frame适应</code></p>
+</blockquote>
+<p><strong>解释几个技巧点</strong></p>
+<ul>
+<li>InputView（ 输入源 ）的父视图作为该InputView的InputAccessoryView，要避免相互引用</li>
+<li>巧用第三方不可见的InputView在适当时间点转移第一响应者给可见的InputView</li>
+<li>完成编辑时去除第一响应者（注意iOS9下键盘响应逻辑视图层级都发生了变化）</li>
+</ul>
+<p><strong>主要代码</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/9360037/11436829/4b2d95f2-9523-11e5-8d66-8745354c0e99.png" alt="simulator screen shot nov 27 2015 4 17 38 pm"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">// 单例初始化</div><div class="line">+ (UUInputAccessoryView*)sharedView &#123;</div><div class="line">    static dispatch_once_t once;</div><div class="line">    static UUInputAccessoryView *sharedView;</div><div class="line">    dispatch_once(&amp;once, ^ &#123;</div><div class="line">        sharedView = [[UUInputAccessoryView alloc] init];</div><div class="line">        sharedView-&gt;btnBack = [UIButton buttonWithType:UIButtonTypeCustom];</div><div class="line">        sharedView-&gt;btnBack.frame = CGRectMake(0, 0, UUIAV_MAIN_W, UUIAV_MAIN_H);</div><div class="line">        [sharedView-&gt;btnBack addTarget:sharedView action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];</div><div class="line">        sharedView-&gt;btnBack.backgroundColor=[UIColor clearColor];</div><div class="line">        UIToolbar *toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, UUIAV_MAIN_W, 44)];</div><div class="line">        sharedView-&gt;inputView = [[UITextField alloc]initWithFrame:CGRectMake(UUIAV_Edge_Hori, UUIAV_Edge_Vert, UUIAV_MAIN_W-UUIAV_Btn_W-4*UUIAV_Edge_Hori, UUIAV_Btn_H)];</div><div class="line">        sharedView-&gt;inputView.borderStyle = UITextBorderStyleRoundedRect;</div><div class="line">        sharedView-&gt;inputView.returnKeyType = UIReturnKeyDone;</div><div class="line">        sharedView-&gt;inputView.clearButtonMode = UITextFieldViewModeWhileEditing;</div><div class="line">        sharedView-&gt;inputView.enablesReturnKeyAutomatically = YES;</div><div class="line">        sharedView-&gt;inputView.delegate = sharedView;</div><div class="line">        [toolbar addSubview:sharedView-&gt;inputView];</div><div class="line">        sharedView-&gt;assistView = [[UITextField alloc]init];</div><div class="line">        sharedView-&gt;assistView.delegate = sharedView;</div><div class="line">        sharedView-&gt;assistView.returnKeyType = UIReturnKeyDone;</div><div class="line">        sharedView-&gt;assistView.enablesReturnKeyAutomatically = YES;</div><div class="line">        [sharedView-&gt;btnBack addSubview:sharedView-&gt;assistView];</div><div class="line">        sharedView-&gt;assistView.inputAccessoryView = toolbar;</div><div class="line">        sharedView-&gt;BtnSave = [UIButton buttonWithType:UIButtonTypeCustom];</div><div class="line">        sharedView-&gt;BtnSave.frame = CGRectMake(UUIAV_MAIN_W-UUIAV_Btn_W-2*UUIAV_Edge_Hori, UUIAV_Edge_Vert, UUIAV_Btn_W, UUIAV_Btn_H);</div><div class="line">        sharedView-&gt;BtnSave.backgroundColor = [UIColor clearColor];</div><div class="line">        [sharedView-&gt;BtnSave setTitle:@&quot;确定&quot; forState:UIControlStateNormal];</div><div class="line">        [sharedView-&gt;BtnSave setTitleColor:[UIColor redColor] forState:UIControlStateNormal];</div><div class="line">        [sharedView-&gt;BtnSave addTarget:sharedView action:@selector(Done) forControlEvents:UIControlEventTouchUpInside];</div><div class="line">        [toolbar addSubview:sharedView-&gt;BtnSave];</div><div class="line">    &#125;);</div><div class="line">	CGRectGetHeight([UIScreen mainScreen].bounds);</div><div class="line">	return sharedView;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>实现逻辑代码</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">+ (void)showKeyboardType:(UIKeyboardType)type content:(NSString *)content Block:(UUInputAccessoryBlock)block</div><div class="line">&#123;</div><div class="line">    [[UUInputAccessoryView sharedView] show:block</div><div class="line">                               keyboardType:type</div><div class="line">                                    content:content];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)show:(UUInputAccessoryBlock)block keyboardType:(UIKeyboardType)type content:(NSString *)content</div><div class="line">&#123;</div><div class="line">    UIWindow *window=[UIApplication sharedApplication].keyWindow;</div><div class="line">    [window addSubview:btnBack];</div><div class="line"></div><div class="line">    inputBlock = block;</div><div class="line">    inputView.text = content;</div><div class="line">    inputView.keyboardType = type;</div><div class="line">    assistView.keyboardType = type;</div><div class="line">    [assistView becomeFirstResponder];</div><div class="line">    shouldDismiss = NO;</div><div class="line">    </div><div class="line">    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardDidShowNotification</div><div class="line">                                                      object:nil</div><div class="line">                                                       queue:nil</div><div class="line">                                                  usingBlock:^(NSNotification * _Nonnull note) &#123;</div><div class="line">                                                      if (!shouldDismiss) &#123;</div><div class="line">                                                          [inputView becomeFirstResponder];</div><div class="line">                                                      &#125;</div><div class="line">                                                  &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)Done</div><div class="line">&#123;</div><div class="line">    [inputView resignFirstResponder];</div><div class="line">    !inputBlock ?: inputBlock(inputView.text);</div><div class="line">    [self dismiss];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (BOOL)textFieldShouldReturn:(UITextField *)textField</div><div class="line">&#123;</div><div class="line">    [self Done];</div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)dismiss</div><div class="line">&#123;</div><div class="line">    shouldDismiss = YES;</div><div class="line">    [inputView resignFirstResponder];</div><div class="line">    [btnBack removeFromSuperview];</div><div class="line">    [[NSNotificationCenter defaultCenter] removeObserver:self];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="InputView的frame适应"><a href="#InputView的frame适应" class="headerlink" title="InputView的frame适应"></a>InputView的frame适应</h3><p><a href="https://github.com/ZhipingYang/UUChatSwift/blob/master/UUChatTableViewSwift/ChatTableViewController.swift#L123" target="_blank" rel="external">案例见GitHub的Demo</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 键盘响应布局</div><div class="line">@objc func keyboardFrameChanged(notification: NSNotification) &#123;</div><div class="line">    </div><div class="line">    let dict = NSDictionary(dictionary: notification.userInfo!)</div><div class="line">    let keyboardValue = dict.objectForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue</div><div class="line">    let bottomDistance = mainScreenSize().height - keyboardValue.CGRectValue().origin.y</div><div class="line">    let duration = Double(dict.objectForKey(UIKeyboardAnimationDurationUserInfoKey) as! NSNumber)</div><div class="line">    </div><div class="line">    UIView.animateWithDuration(duration, animations: &#123;</div><div class="line">        self.inputViewConstraint!.constant = -bottomDistance</div><div class="line">        self.view.layoutIfNeeded()</div><div class="line">        &#125;, completion: &#123;</div><div class="line">            (value: Bool) in</div><div class="line">            self.chatTableView.scrollToBottom(animation: true)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="ScrollView下拉动态修改keyboard（InputView）的frame"><a href="#ScrollView下拉动态修改keyboard（InputView）的frame" class="headerlink" title="ScrollView下拉动态修改keyboard（InputView）的frame"></a>ScrollView下拉动态修改keyboard（InputView）的frame</h3><p><strong>常见隐藏keyboard的一些方式</strong></p>
+<ul>
+<li>TouchBeigin</li>
+<li>DidDrag</li>
+<li>EndDrag</li>
+<li>Interactive</li>
+</ul>
+<p><strong>iOS7 开始，ScrollView提供</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@available(iOS 7.0, *)</div><div class="line">public enum UIScrollViewKeyboardDismissMode : Int &#123;</div><div class="line">    case None</div><div class="line">    case OnDrag // dismisses the keyboard when a drag begins</div><div class="line">    case Interactive // the keyboard follows the dragging touch off screen, and may be pulled upward again to cancel the dismiss</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>所以在ScrollView上添加<code>scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive</code>就可以了。<br>效果详见iOS7及以上原生设备的短信滑动消失键盘的交互</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/11/2015-12-11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          MarkDown的CSS实现配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/13/2015-11-13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - Swift入门专题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015-11-25" data-title="IM中输入框的优化方案实现" data-url="http://yoursite.com/2015/11/25/2015-11-25/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 ShirleyYoung
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
