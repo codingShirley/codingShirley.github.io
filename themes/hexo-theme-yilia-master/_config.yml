@@ -6,9 +6,9 @@ menu:
 
 # SubNav
 subnav:
-  github: https://github.com/zhipingyang
+  github: https://github.com/codingShirley
   weibo: http://weibo.com/p/1006062608078012/home
-  mail: xcodeyang@gmail.com
+  mail: codingshirley@gmail.com
   #rss: "#"
   #zhihu: "#"
   #douban: "#"
@@ -35,7 +35,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: 'https://avatars3.githubusercontent.com/u/9360037'
+avatar: 'https://avatars1.githubusercontent.com/u/29747867'
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
@@ -49,8 +49,7 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  tomatopeter's blog': http://www.tomatopeter.com/
-  ming.z's blog: http://ioi.im/
+  xcodeyang's blog': https://zhipingyang.github.io/
 
 #是否开启“关于我”。
 #不开启——
